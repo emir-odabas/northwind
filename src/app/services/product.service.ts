@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ListResponseModel } from '../models/ListResponseModel';
+import { ListResponseModel } from '../models/listResponseModel';
 import { Product } from '../models/product';
 
 //providedIn parametresi, service’ in hangi seviyede injectable olduğunu tanımlar.
@@ -11,13 +11,19 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  apiUrl = "https://localhost:44334/api/Products/getall"
+  apiUrl = "https://localhost:44334/api/Products/getall";
+
   constructor(private httpCLient: HttpClient) { }
+  getProducts(): Observable<ListResponseModel<Product>> {
+    let newPath = this.apiUrl + "products/getall"
+    return this.httpCLient.get<ListResponseModel<Product>>(this.apiUrl);
+  }
 
   //Bir servisten api isteği yapmak için gerekli işlem aşağıda
   //Observable =Olay takibi ve Asenkron işlemler için kullanacağımız nesnemizi içeren modüldür.
   //Subscribe olabilir bir response model dönülücek  (data’yi direk alarak(subscribe))
-  getProducts(): Observable<ListResponseModel<Product>> {
-    return this.httpCLient.get<ListResponseModel<Product>>(this.apiUrl);
+  getProductsByCategory(categoryId: number): Observable<ListResponseModel<Product>> {
+    let newPath = this.apiUrl + "products/getbycategory?categoryId=" + categoryId
+    return this.httpCLient.get<ListResponseModel<Product>>(newPath);
   }
 }

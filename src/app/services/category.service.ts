@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ListResponseModel } from '../models/ListResponseModel';
+import { ListResponseModel } from '../models/listResponseModel';
 import { Category } from '../models/category';
 
 //providedIn parametresi, service’ in hangi seviyede injectable olduğunu tanımlar.
@@ -11,7 +11,7 @@ import { Category } from '../models/category';
 })
 export class CategoryService {
 
-  apiUrl = "https://localhost:44334/api/Categories/getall"
+  apiUrl = "https://localhost:44334/api/Categories/getall";
   constructor(private httpCLient: HttpClient) { }
 
   //Bir servisten api isteği yapmak için gerekli işlem aşağıda
