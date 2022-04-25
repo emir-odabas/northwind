@@ -17,7 +17,7 @@ export class CategoryService {
   //Bir servisten api isteği yapmak için gerekli işlem aşağıda
   //Observable =Olay takibi ve Asenkron işlemler için kullanacağımız nesnemizi içeren modüldür.
   //Subscribe olabilir bir response model dönülücek  (data’yi direk alarak(subscribe))
-  getProducts(): Observable<ListResponseModel<Category>> {
+  getCategories(): Observable<ListResponseModel<Category>> {
     return this.httpCLient.get<ListResponseModel<Category>>(this.apiUrl);
   }
 }

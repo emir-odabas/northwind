@@ -11,12 +11,12 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  apiUrl = "https://localhost:44334/api/Products/getall";
+  apiUrl = "https://localhost:44334/api/";
 
   constructor(private httpCLient: HttpClient) { }
   getProducts(): Observable<ListResponseModel<Product>> {
     let newPath = this.apiUrl + "products/getall"
-    return this.httpCLient.get<ListResponseModel<Product>>(this.apiUrl);
+    return this.httpCLient.get<ListResponseModel<Product>>(newPath);
   }
 
   //Bir servisten api isteği yapmak için gerekli işlem aşağıda
@@ -26,4 +26,6 @@ export class ProductService {
     let newPath = this.apiUrl + "products/getbycategory?categoryId=" + categoryId
     return this.httpCLient.get<ListResponseModel<Product>>(newPath);
   }
+
+
 }

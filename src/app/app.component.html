@@ -6,23 +6,19 @@ Hello{{user}}
 <!-- let product of products = foreach -->
 <!-- "*ngFor"= "directive" -->
 <!-- *ngFor = şuan bulunduğumuz satırı tekrarla -->
- <!-- directive ,bizim ilgili html elementini manipule etmemize yarıyor -->
+<!-- directive ,bizim ilgili html elementini manipule etmemize yarıyor -->
 
- <!-- <ul>
+<!-- <ul>
   <li *ngFor="let product of products">{{product.productName}}</li>     
 </ul>                                             -->
-<div class="container"> 
+<div class="container">
   <app-navi></app-navi>
   <div class="row">
     <div class="col-md-3">
       <app-category></app-category>
     </div>
     <div class="col-md-9">
-      <app-product></app-product>
-    </div>    
+      <router-outlet></router-outlet>
     </div>
-  
-  <router-outlet></router-outlet>
+  </div>
 </div>
-
-
