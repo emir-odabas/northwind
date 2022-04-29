@@ -9,8 +9,8 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoryComponent implements OnInit {
 
-  categories: Category[] = [];
-  currentCategory: Category;
+  categories: Category[];   //  Category[]; =[];ilk array i boş verdiğimz için bi sorun olmaz
+  currentCategory: any;
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {

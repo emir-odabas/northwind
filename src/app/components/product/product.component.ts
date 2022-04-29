@@ -6,6 +6,7 @@ import { ProductService } from 'src/app/services/product.service';
 
 //HttpClient ile backenddeki data ya erişim sağlıyoruz
 
+//Dataları compenentler yönetir ve bunuda html kullanır
 
 //Bir nesnenin component özelliği taşıyabilmesi için üstüne @Component decorator’ü eklenmelidir.
 // Bu decorator sayesinde meta-datalarını da tanımlayabiliriz.
@@ -18,7 +19,7 @@ export class ProductComponent implements OnInit {
 
   products: Product[] = [];
   dataLoaded = false; //Olay burda bir data koyup o datayı yönetmek
-
+  filterText = ""
 
   // productResponseModel:ProductResponseModel={}
   constructor(private productService: ProductService,
