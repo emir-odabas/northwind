@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Product } from '../models/product';
+import { ResponseModel } from '../models/responseModel';
 
 //providedIn parametresi, service’ in hangi seviyede injectable olduğunu tanımlar.
 // Örneğin root değeri, service’ in uygulama boyunca her yerden injecte edilebileceğini belirtir.
@@ -25,6 +26,11 @@ export class ProductService {
   getProductsByCategory(categoryId: number): Observable<ListResponseModel<Product>> {
     let newPath = this.apiUrl + "products/getbycategory?categoryId=" + categoryId
     return this.httpCLient.get<ListResponseModel<Product>>(newPath);
+  }
+
+
+  add(product: Product): Observable<ResponseModel> {
+    return this.httpCLient.post<ResponseModel>(this.apiUrl + "products/add", product)
   }
 
 

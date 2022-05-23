@@ -14,6 +14,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
 
 //Temel manada birbiri ile ilişkili compenentleri directivleri ve farklı bileşenleri topladıgımız yer.
 //Bir uygulamada 2 tane module olabilir (admin,e-ticaret)
@@ -27,12 +28,14 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     VatAddedPipe,
     FilterPipePipe,
     CartSummaryComponent,
+    ProductAddComponent,
   ],
   imports: [        //Bizim yazmadıgımız modulleri importa koyuyoruz  
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     ToastrModule.forRoot({//forRoot() = projemiz için kullanılabilir hale getir
       positionClass: "toast-bottom-right"
